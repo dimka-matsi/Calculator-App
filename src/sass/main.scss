@@ -1,0 +1,24 @@
+body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    background-color: #a7ded9;
+    margin: 0 auto;
+}
+
+.calculator {
+    width: 520px;
+    height: 690px; //790px
+    background-color: #0f4641;
+    margin: 0 auto;
+    border-radius: 30px;
+}
