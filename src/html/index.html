@@ -4,30 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../public/css/main.css">
     <title>Calculator App</title>
 </head>
 <body>
     <div class="wrap">
         <div class="calculator">
+            <div class="calculator__screen">
+                <div class="history">
+                    <p class="history-value">9*9</p>
+                </div>
+                <div class="output">
+                    <p class="output-value">81</p>
+                </div>
+            </div>
             <div class="calculator__controls">
                 <div class="controls-numbers">
-                    <ul>
-                        <li class="numb"><button class="btn btn-val">C</button></li>
-                        <li class="numb"><button class="btn btn-val">+/-</button></li>
-                        <li class="numb"><button class="btn btn-val">%</button></li>
-                        <li class="numb"><button class="btn btn-val">9</button></li>
-                        <li class="numb"><button class="btn btn-val">8</button></li>
+                    <ul class="block-left">
+                        <li class="numb"><button class="btn btn-upper">C</button></li>
+                        <li class="numb"><button class="btn btn-upper">+/-</button></li>
+                        <li class="numb"><button class="btn btn-upper">%</button></li>
                         <li class="numb"><button class="btn btn-val">7</button></li>
-                        <li class="numb"><button class="btn btn-val">6</button></li>
-                        <li class="numb"><button class="btn btn-val">5</button></li>
+                        <li class="numb"><button class="btn btn-val">8</button></li>
+                        <li class="numb"><button class="btn btn-val">9</button></li>
                         <li class="numb"><button class="btn btn-val">4</button></li>
-                        <li class="numb"><button class="btn btn-val">3</button></li>
-                        <li class="numb"><button class="btn btn-val">2</button></li>
+                        <li class="numb"><button class="btn btn-val">5</button></li>
+                        <li class="numb"><button class="btn btn-val">6</button></li>
                         <li class="numb"><button class="btn btn-val">1</button></li>
+                        <li class="numb"><button class="btn btn-val">2</button></li>
+                        <li class="numb"><button class="btn btn-val">3</button></li>
                         <li class="numb"><button class="btn btn-val">.</button></li>
                         <li class="numb"><button class="btn btn-val">0</button></li>
                         <li class="numb"><button class="btn btn-val">00</button></li>
+                    </ul>
+                    <ul class="operators block-right">
+                        <li class="numb"><button class="btn btn-operator">÷</button></li>
+                        <li class="numb"><button class="btn btn-operator">×</button></li>
+                        <li class="numb"><button class="btn btn-operator">+</button></li>
+                        <li class="numb"><button class="btn btn-operator">-</button></li>
+                        <li class="numb"><button class="btn btn-operator">=</button></li>
                     </ul>
                 </div>
             </div>
