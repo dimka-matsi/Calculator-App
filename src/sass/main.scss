@@ -4,8 +4,38 @@ body, html {
     margin: 0;
 }
 
-h1 {
+h1,
+p {
     margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+.btn {
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    background-color: #29978c;
+    border: none;
+    font-family: inherit;
+    font-size: 40px;
+    color: #fff;
+    &-upper {
+        background-color: #166760;
+    }
+    &-operator {
+        background-color: #a7ded9;
+        font-size: 60px;
+        color: #29978c;
+    }
 }
 
 .wrap {
@@ -17,8 +47,56 @@ h1 {
 
 .calculator {
     width: 520px;
-    height: 690px; //790px
+    height: 790px; //790px
     background-color: #0f4641;
     margin: 0 auto;
     border-radius: 30px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    &__screen {
+        background: #166760;
+        height: 165px;
+        text-align: right;
+        padding: 0 50px;
+        p {
+            font-family: inherit;
+            font-size: 40px;
+            color: #fff;
+        }
+        .history {
+            height: 65px;
+        }
+        .output {
+            height: 100px;
+            p {
+                font-size: 60px;
+            }
+        }
+    }
+    &__controls {
+        height: 625px;
+        .controls-numbers {
+            display: flex;
+            margin: 28px;
+            .block-left {
+                display: flex;
+                flex-basis: 100%;
+                flex-wrap: wrap;
+                .numb {
+                    width: calc(100% / 3);
+                    margin-bottom: 5px;
+
+                } 
+            }
+            .block-right {
+                .numb {
+                    margin-bottom: 5px;
+                    &:last-child {
+                        margin: 0;
+                    }
+                }
+            }
+        }   
+    }
 }
