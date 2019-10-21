@@ -13,41 +13,82 @@
         <div class="calculator">
             <div class="calculator__screen">
                 <div class="history">
-                    <p class="history-value">9*9</p>
+                    <p class="history-value"></p>
                 </div>
                 <div class="output">
-                    <p class="output-value">81</p>
+                    <p class="output-value">0</p>
                 </div>
             </div>
             <div class="calculator__controls">
                 <div class="controls-numbers">
                     <ul class="block-left">
-                        <li class="numb"><button class="btn btn-upper">C</button></li>
+                        <li class="numb"><button class="btn btn-clear">C</button></li>
                         <li class="numb"><button class="btn btn-upper">+/-</button></li>
                         <li class="numb"><button class="btn btn-upper">%</button></li>
-                        <li class="numb"><button class="btn btn-val">7</button></li>
-                        <li class="numb"><button class="btn btn-val">8</button></li>
-                        <li class="numb"><button class="btn btn-val">9</button></li>
-                        <li class="numb"><button class="btn btn-val">4</button></li>
-                        <li class="numb"><button class="btn btn-val">5</button></li>
-                        <li class="numb"><button class="btn btn-val">6</button></li>
-                        <li class="numb"><button class="btn btn-val">1</button></li>
-                        <li class="numb"><button class="btn btn-val">2</button></li>
-                        <li class="numb"><button class="btn btn-val">3</button></li>
-                        <li class="numb"><button class="btn btn-val">.</button></li>
-                        <li class="numb"><button class="btn btn-val">0</button></li>
-                        <li class="numb"><button class="btn btn-val">00</button></li>
+                        <li class="numb"><button class="btn btn-val" value="7">7</button></li>
+                        <li class="numb"><button class="btn btn-val" value="8">8</button></li>
+                        <li class="numb"><button class="btn btn-val" value="9">9</button></li>
+                        <li class="numb"><button class="btn btn-val" value="4">4</button></li>
+                        <li class="numb"><button class="btn btn-val" value="5">5</button></li>
+                        <li class="numb"><button class="btn btn-val" value="6">6</button></li>
+                        <li class="numb"><button class="btn btn-val" value="1">1</button></li>
+                        <li class="numb"><button class="btn btn-val" value="2">2</button></li>
+                        <li class="numb"><button class="btn btn-val" value="3">3</button></li>
+                        <li class="numb"><button class="btn btn-val" value=".">.</button></li>
+                        <li class="numb"><button class="btn btn-val" value="0">0</button></li>
+                        <li class="numb"><button class="btn btn-val" value="00">00</button></li>
                     </ul>
                     <ul class="operators block-right">
-                        <li class="numb"><button class="btn btn-operator">÷</button></li>
-                        <li class="numb"><button class="btn btn-operator">×</button></li>
-                        <li class="numb"><button class="btn btn-operator">+</button></li>
-                        <li class="numb"><button class="btn btn-operator">-</button></li>
-                        <li class="numb"><button class="btn btn-operator">=</button></li>
+                        <li class="numb"><button class="btn btn-operator" value="÷">÷</button></li>
+                        <li class="numb"><button class="btn btn-operator" value="×">×</button></li>
+                        <li class="numb"><button class="btn btn-operator" value="+">+</button></li>
+                        <li class="numb"><button class="btn btn-operator" value="-">-</button></li>
+                        <li class="numb"><button class="btn btn-operator" value="=">=</button></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        let ctrBtn = document.querySelector('.controls-numbers');
+        let history = document.querySelector('.history-value');
+        let total = document.querySelector('.output-value');
+        let disableOperators = true;
+        const operators = ['+', '-', '×', '÷'];
+        
+
+        ctrBtn.addEventListener('click', function(e){
+            let element = e.target.classList;
+            let lastChair = history.innerHTML[history.innerHTML.length -1];
+            console.log(lastChair);
+
+            // Clear input
+            if (element.contains('btn-clear')) {
+                total.innerHTML = 0;
+                history.innerHTML = '';
+                disableOperators = true;
+            }
+            // Operators ['+', '-', '×', '÷']
+            if (disableOperators) {
+                if ( history.innerHTML != '' && operators.indexOf(lastChair) == -1 && element.contains('btn-operator')) {
+                    history.innerHTML += e.target.getAttribute('value');
+                    disableOperators = false;
+                    console.log(e.target.getAttribute('value'));
+                }
+            }
+            
+            
+            
+
+            if (element.contains('btn-val') ) {
+                console.log(e.target.getAttribute('value'));
+                history.innerHTML += e.target.getAttribute('value')
+            }
+            // if (element.contains('btn-operator')) {
+            //     history.innerHTML += e.target.getAttribute('value')
+            // }
+            
+        })
+    </script>
 </body>
 </html>

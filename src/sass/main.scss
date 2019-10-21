@@ -28,6 +28,14 @@ body {
     font-family: inherit;
     font-size: 40px;
     color: #fff;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        background: darken(#29978c, 10%);
+    }
+    &:focus {
+        box-shadow: none;
+    }
     &-upper {
         background-color: #166760;
     }
